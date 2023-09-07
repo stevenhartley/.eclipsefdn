@@ -12,6 +12,9 @@ orgs.newOrg('eclipse-uprotocol') {
     readers_can_create_discussions: true,
     two_factor_requirement: false,
     web_commit_signoff_required: false,
+    workflows+: {
+      actions_can_approve_pull_request_reviews: false,
+    },
   },
   _repositories+:: [
     orgs.newRepo('.github') {
@@ -43,18 +46,17 @@ orgs.newOrg('eclipse-uprotocol') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('uprotocol-spec') {
-      allow_update_branch: false,
-      description: "uProtocol Specifications",
-      secret_scanning_push_protection: "disabled",
-      web_commit_signoff_required: false,
-    },
     orgs.newRepo('uprotocol-sdk-rust') {
       allow_update_branch: false,
       description: "uProtocol Rust SDK",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
-
+    orgs.newRepo('uprotocol-spec') {
+      allow_update_branch: false,
+      description: "uProtocol Specifications",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
   ],
 }
