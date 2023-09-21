@@ -76,5 +76,11 @@ orgs.newOrg('eclipse-uprotocol') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('uprotocol-roadmap') {
+      allow_update_branch: false,
+      description: "uProtocol Roadmap",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
   ],
 }
