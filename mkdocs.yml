@@ -1,6 +1,6 @@
 site_name: Otterdog configuration @ eclipse-uprotocol
 site_description: Otterdog configuration @ eclipse-uprotocol
-strict: true
+strict: false
 
 site_url: https://eclipse-uprotocol.github.io/.eclipsefdn/
 
