@@ -126,5 +126,15 @@ orgs.newOrg('eclipse-uprotocol') {
       description: "Collection of tools used by various other projects",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('uprotocol-tools') {
+      allow_update_branch: false,
+      description: "Collection of tools used by various other projects",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('uprotocol-ulink-zenoh-python') {
+      allow_update_branch: false,
+      description: "Python uLink implementation for the Zenoh transport",
+      web_commit_signoff_required: false,
+    },
   ],
 }
