@@ -16,11 +16,11 @@ orgs.newOrg('eclipse-uprotocol') {
     },
   },
   secrets+: [
-    orgs.newOrgSecret('CRATES_IO_TOKEN') {
-      value: "pass:bots/automotive.uprotocol/crates.io/api-token",
-    },
     orgs.newOrgSecret('BOT_GITHUB_TOKEN') {
       value: "pass:bots/automotive.uprotocol/github.com/api-token",
+    },
+    orgs.newOrgSecret('CRATES_IO_TOKEN') {
+      value: "pass:bots/automotive.uprotocol/crates.io/api-token",
     },
     orgs.newOrgSecret('ORG_GPG_PASSPHRASE') {
       value: "pass:bots/automotive.uprotocol/gpg/passphrase",
@@ -51,12 +51,84 @@ orgs.newOrg('eclipse-uprotocol') {
       delete_branch_on_merge: false,
       description: "uProtocol Core APIs and Data Model",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_status_checks+: ["verify-pr"],
           required_approving_review_count: 1,
-        }
+          required_status_checks+: [
+            "verify-pr"
+          ],
+        },
       ],
+    },
+    orgs.newRepo('uprotocol-cpp') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Language Specific Library for C++",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    orgs.newRepo('uprotocol-cpp-ulink-zenoh') {
+      allow_update_branch: false,
+      description: "C++ uLink Library for zenoh transport",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    orgs.newRepo('uprotocol-java') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Language Specific Library for Java",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+            "verify-pr"
+          ],
+        },
+      ],
+    },
+    orgs.newRepo('uprotocol-java-ulink-android') {
+      allow_update_branch: false,
+      description: "Java uLink Library for Android Binder Transport",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    orgs.newRepo('uprotocol-java-ulink-example') {
+      allow_update_branch: false,
+      description: "Example uLink implementation written in Java that echos the send message back",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    orgs.newRepo('uprotocol-java-ulink-zenoh') {
+      allow_update_branch: false,
+      description: "Java uLink Library for zenoh transport",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    orgs.newRepo('uprotocol-kotlin') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Language Specific Library for Kotlin",
+      web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
@@ -81,54 +153,7 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-roadmap') {
-      allow_update_branch: false,
-      description: "uProtocol Roadmap",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-cpp') {
-      aliases: ["uprotocol-sdk-cpp"],
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "uProtocol Language Specific Library for C++",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-kotlin') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "uProtocol Language Specific Library for Kotlin",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-java') {
-      aliases: ["uprotocol-sdk-java"],
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "uProtocol Language Specific Library for Java",
-      web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_status_checks+: ["verify-pr"],
-          required_approving_review_count: 1,
-        }
-      ],
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
     orgs.newRepo('uprotocol-python') {
-      aliases: ["uprotocol-sdk-python"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -138,8 +163,23 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('uprotocol-python-ulink-zenoh') {
+      allow_update_branch: false,
+      description: "Python uLink implementation for the Zenoh transport",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    orgs.newRepo('uprotocol-roadmap') {
+      allow_update_branch: false,
+      description: "uProtocol Roadmap",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
     orgs.newRepo('uprotocol-rust') {
-      aliases: ["uprotocol-sdk-rust"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -167,49 +207,5 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('uprotocol-java-ulink-android') {
-      aliases: ["uprotocol-ulink-android-java"],
-      allow_update_branch: false,
-      description: "Java uLink Library for Android Binder Transport",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-cpp-ulink-zenoh') {
-      aliases: ["uprotocol-ulink-zenoh-cpp"],
-      allow_update_branch: false,
-      description: "C++ uLink Library for zenoh transport",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-java-ulink-zenoh') {
-      aliases: ["uprotocol-ulink-zenoh-java"],
-      allow_update_branch: false,
-      description: "Java uLink Library for zenoh transport",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-python-ulink-zenoh') {
-      aliases: ["uprotocol-ulink-zenoh-python"],
-      allow_update_branch: false,
-      description: "Python uLink implementation for the Zenoh transport",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-java-ulink-example') {
-      allow_update_branch: false,
-      description: "Example uLink implementation written in Java that echos the send message back",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    }
   ],
 }
