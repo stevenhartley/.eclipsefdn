@@ -4,7 +4,6 @@ orgs.newOrg('eclipse-uprotocol') {
   settings+: {
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
-    members_can_change_project_visibility: false,
     name: "Eclipse uProtocol",
     packages_containers_internal: false,
     packages_containers_public: false,
@@ -71,6 +70,14 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for C++",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    orgs.newRepo('uprotocol-cpp-ulink-sommr') {
+      allow_update_branch: false,
+      description: "C++ uLink Library for sommr (SOME/IP) transport",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -146,6 +153,14 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('uprotocol-platform-linux-zenoh') {
+      allow_update_branch: false,
+      description: "Linux uPlatform that is based off the Zenoh uTransport",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
     orgs.newRepo('uprotocol-platform-simulator') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -205,22 +220,6 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('uprotocol-tools') {
       allow_update_branch: false,
       description: "Collection of tools used by various other projects",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-platform-linux-zenoh') {
-      allow_update_branch: false,
-      description: "Linux uPlatform that is based off the Zenoh uTransport",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('uprotocol-cpp-ulink-sommr') {
-      allow_update_branch: false,
-      description: "C++ uLink Library for sommr (SOME/IP) transport",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
