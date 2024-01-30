@@ -138,6 +138,13 @@ orgs.newOrg('eclipse-uprotocol') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_status_checks+: [
+            "Java CI with Gradle"
+          ],
+        },
+      ],
     },
     orgs.newRepo('up-client-zenoh-java') {
       aliases: ["uprotocol-java-ulink-zenoh"],
