@@ -142,7 +142,7 @@ orgs.newOrg('eclipse-uprotocol') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           required_status_checks+: [
-            "Java CI with Gradle"
+            "build"
           ],
         },
       ],
