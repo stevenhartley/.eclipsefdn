@@ -69,6 +69,7 @@ orgs.newOrg('eclipse-uprotocol') {
       description: "uProtocol Core APIs and Data Model",
       topics: [
         "core",
+        "protos",
         "uprotocol",
       ],            
       web_commit_signoff_required: false,
@@ -203,6 +204,12 @@ orgs.newOrg('eclipse-uprotocol') {
       aliases: ["uprotocol-rust-ulink-sommr", "uprotocol-rust-transport-sommr"],
       allow_update_branch: false,
       description: "Rust uLink Library for sommr (SOME/IP) transport",
+      topics: [
+        "client",
+        "rust",
+        "sommr",
+        "uprotocol",
+      ],            
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -335,6 +342,37 @@ orgs.newOrg('eclipse-uprotocol') {
       },
     },
 
+    orgs.newRepo('up-simulator-proxy') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "Android Implementation of uDiscovery service",
+      topics: [
+        "python",
+        "uprotocol",
+        "simulator",
+      ],            
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-android-example') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "Android Implementation of uDiscovery service",
+      topics: [
+        "java",
+        "uprotocol",
+        "android",
+      ],            
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
     orgs.newRepo('up-android-helloworld') {
       allow_merge_commit: true,
       allow_update_branch: false,
