@@ -250,6 +250,15 @@ orgs.newOrg('eclipse-uprotocol') {
       },
     },
 
+    orgs.newRepo('up-client-android-rust') {
+      allow_update_branch: false,
+      description: "Rust client side Library for Android implementation of uProtocol",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
 
     orgs.newRepo('up-android-core') {
       aliases: [
