@@ -51,6 +51,10 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Specifications",
+      topics: [
+        "core",
+        "uprotocol",
+      ],            
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -63,6 +67,10 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Core APIs and Data Model",
+      topics: [
+        "core",
+        "uprotocol",
+      ],            
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -83,6 +91,11 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for Java",
+      topics: [
+        "core",
+        "java",
+        "uprotocol",
+      ],
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -103,6 +116,11 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for C++",
+      topics: [
+        "core",
+        "cpp",
+        "uprotocol",
+      ],      
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -115,6 +133,11 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for Rust",
+      topics: [
+        "core",
+        "rust",
+        "uprotocol",
+      ],            
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -127,6 +150,11 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for Kotlin",
+      topics: [
+        "core",
+        "kotlin",
+        "uprotocol",
+      ],            
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -139,6 +167,11 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for Python",
+      topics: [
+        "core",
+        "python",
+        "uprotocol",
+      ],            
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -180,6 +213,11 @@ orgs.newOrg('eclipse-uprotocol') {
       aliases: ["uprotocol-rust-ulink-zenoh"],
       allow_update_branch: false,
       description: "Rust client-side library to talk to the Zenoh implementation of uProtocol",
+      topics: [
+        "rust",
+        "up-client",
+        "zenoh",
+      ],            
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -190,6 +228,12 @@ orgs.newOrg('eclipse-uprotocol') {
       aliases: ["uprotocol-cpp-ulink-zenoh"],
       allow_update_branch: false,
       description: "C++ client library to connect to the zenoh implementation of uProtocol",
+      topics: [
+        "cpp",
+        "zenoh",
+        "up-client",
+        "uprotocol",
+      ],            
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -199,6 +243,12 @@ orgs.newOrg('eclipse-uprotocol') {
       aliases: ["uprotocol-java-ulink-android"],
       allow_update_branch: false,
       description: "Java Client Library to connect to the Android implementation of uProtocol",
+      topics: [
+        "android",
+        "java",
+        "up-client",
+        "uprotocol",
+      ],
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -322,6 +372,11 @@ orgs.newOrg('eclipse-uprotocol') {
       aliases: ["uprotocol-python-ulink-zenoh"],
       allow_update_branch: false,
       description: "Python uLink implementation for the Zenoh transport",
+      topics: [
+        "python",
+        "up-client",
+        "zenoh",
+      ],            
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
