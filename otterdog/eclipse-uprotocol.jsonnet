@@ -45,6 +45,18 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('up-spec') {
+      aliases: ["uprotocol-spec"],
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Specifications",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
     orgs.newRepo('up-core-api') {
       aliases: ["uprotocol-core-api"],
       allow_merge_commit: true,
@@ -64,53 +76,7 @@ orgs.newOrg('eclipse-uprotocol') {
         },
       ],
     },
-    orgs.newRepo('up-cpp') {
-      aliases: ["uprotocol-cpp"],
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "uProtocol Language Specific Library for C++",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('up-client-sommr-rust') {
-      aliases: ["uprotocol-rust-ulink-sommr", "uprotocol-rust-transport-sommr"],
-      allow_update_branch: false,
-      description: "Rust uLink Library for sommr (SOME/IP) transport",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('up-client-zenoh-rust') {
-      aliases: ["uprotocol-rust-ulink-zenoh"],
-      allow_update_branch: false,
-      description: "Rust client-side library to talk to the Zenoh implementation of uProtocol",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('up-tck') {
-      aliases: ["uprotocol-tck"],
-      allow_update_branch: false,
-      description: "uProtocol Test Compatibility Kit",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('up-client-zenoh-cpp') {
-      aliases: ["uprotocol-cpp-ulink-zenoh"],
-      allow_update_branch: false,
-      description: "C++ client library to connect to the zenoh implementation of uProtocol",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
+
     orgs.newRepo('up-java') {
       aliases: ["uprotocol-java"],
       allow_merge_commit: true,
@@ -130,6 +96,105 @@ orgs.newOrg('eclipse-uprotocol') {
         },
       ],
     },
+
+    orgs.newRepo('up-cpp') {
+      aliases: ["uprotocol-cpp"],
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Language Specific Library for C++",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-rust') {
+      aliases: ["uprotocol-rust"],
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Language Specific Library for Rust",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-kotlin') {
+      aliases: ["uprotocol-kotlin"],
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Language Specific Library for Kotlin",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-python') {
+      aliases: ["uprotocol-python"],
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Language Specific Library for Python",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-tck') {
+      aliases: ["uprotocol-tck"],
+      allow_update_branch: false,
+      description: "uProtocol Test Compatibility Kit",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('manifests') {
+      allow_update_branch: false,
+      description: "Collection of repo manifests for pulling uProtocol projects",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+
+
+    orgs.newRepo('up-client-sommr-rust') {
+      aliases: ["uprotocol-rust-ulink-sommr", "uprotocol-rust-transport-sommr"],
+      allow_update_branch: false,
+      description: "Rust uLink Library for sommr (SOME/IP) transport",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-client-zenoh-rust') {
+      aliases: ["uprotocol-rust-ulink-zenoh"],
+      allow_update_branch: false,
+      description: "Rust client-side library to talk to the Zenoh implementation of uProtocol",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-client-zenoh-cpp') {
+      aliases: ["uprotocol-cpp-ulink-zenoh"],
+      allow_update_branch: false,
+      description: "C++ client library to connect to the zenoh implementation of uProtocol",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
     orgs.newRepo('up-client-android-java') {
       aliases: ["uprotocol-java-ulink-android"],
       allow_update_branch: false,
@@ -147,6 +212,7 @@ orgs.newOrg('eclipse-uprotocol') {
         },
       ],
     },
+
     orgs.newRepo('up-client-android-kotlin') {
       allow_update_branch: false,
       description: "Kotlin Client Library to connect to the Android implementation of uProtocol",
@@ -155,6 +221,7 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+
     orgs.newRepo('up-client-zenoh-java') {
       aliases: ["uprotocol-java-ulink-zenoh"],
       allow_update_branch: false,
@@ -164,37 +231,81 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('up-kotlin') {
-      aliases: ["uprotocol-kotlin"],
+
+    orgs.newRepo('up-client-eventgrid-rust') {
+      allow_update_branch: false,
+      description: "Rust client side Library to connect to Microsoft EventGrid (Azure)",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+    
+    orgs.newRepo('up-client-azure-java') {
+      allow_update_branch: false,
+      description: "Java client side Library to build uEs that will run on Azure",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-client-android-rust') {
+      allow_update_branch: false,
+      description: "Rust client side Library for Android implementation of uProtocol",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+
+    orgs.newRepo('up-android-core') {
+      aliases: [
+        "uprotocol-platform-android",
+        "up-android"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "uProtocol Language Specific Library for Kotlin",
+      description: "Android Implementation of Core uBus and uSubscription uProtocol",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('up-android') {
-      aliases: ["uprotocol-platform-android"],
+
+    orgs.newRepo('up-android-discovery') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "Android Implementation of uProtocol",
+      description: "Android Implementation of uDiscovery service",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('up-zenoh') {
-      aliases: ["uprotocol-platform-linux-zenoh"],
+
+    orgs.newRepo('up-android-helloworld') {
+      allow_merge_commit: true,
       allow_update_branch: false,
-      description: "Zenoh implementation of uProtocol",
+      delete_branch_on_merge: false,
+      description: "Implementation of COVESA/HelloWorld Application and Service for Android",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+
+    orgs.newRepo('up-streamer-rust') {
+      aliases: ["uprotocol-platform-linux-zenoh", "up-zenoh"],
+      allow_update_branch: false,
+      description: "Generic uStreamer implementation written in Rust",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
     orgs.newRepo('up-simulator') {
       aliases: ["uprotocol-platform-simulator"],
       allow_merge_commit: true,
@@ -206,17 +317,7 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('up-python') {
-      aliases: ["uprotocol-python"],
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "uProtocol Language Specific Library for Python",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
+
     orgs.newRepo('up-client-zenoh-python') {
       aliases: ["uprotocol-python-ulink-zenoh"],
       allow_update_branch: false,
@@ -226,28 +327,7 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
-    orgs.newRepo('up-rust') {
-      aliases: ["uprotocol-rust"],
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "uProtocol Language Specific Library for Rust",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
-    orgs.newRepo('up-spec') {
-      aliases: ["uprotocol-spec"],
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "uProtocol Specifications",
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
+
     orgs.newRepo('up-experiments') {
       allow_update_branch: false,
       description: "Dumping ground for experiments that are WiP and there is no better home for the code",
