@@ -203,7 +203,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-client-sommr-rust') {
       aliases: ["uprotocol-rust-ulink-sommr", "uprotocol-rust-transport-sommr"],
       allow_update_branch: false,
-      description: "Rust uLink Library for sommr (SOME/IP) transport",
+      description: "Rust uPClient Library for sommr (SOME/IP) transport",
       topics: [
         "client",
         "rust",
@@ -409,11 +409,25 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-client-zenoh-python') {
       aliases: ["uprotocol-python-ulink-zenoh"],
       allow_update_branch: false,
-      description: "Python uLink implementation for the Zenoh transport",
+      description: "Python uPClient implementation for the Zenoh transport",
       topics: [
         "python",
         "up-client",
         "zenoh",
+      ],            
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-client-vsomeip-python') {
+      allow_update_branch: false,
+      description: "Python uPClient implementation for SOME/IP using vsomeip",
+      topics: [
+        "python",
+        "up-client",
+        "vsomeip",
       ],            
       web_commit_signoff_required: false,
       workflows+: {
