@@ -289,9 +289,9 @@ orgs.newOrg('eclipse-uprotocol') {
       },
     },
 
-    orgs.newRepo('up-client-eventgrid-rust') {
+    orgs.newRepo('up-client-mqtt5-rust') {
       allow_update_branch: false,
-      description: "Rust client side Library to connect to Microsoft EventGrid (Azure)",
+      description: "Rust client to communicate with a MQTT5 broker",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
