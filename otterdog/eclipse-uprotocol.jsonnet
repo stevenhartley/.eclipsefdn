@@ -128,8 +128,9 @@ orgs.newOrg('eclipse-uprotocol') {
       },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
           required_status_checks+: [
-            "ci"
+            "build"
           ],
         },
       ],
@@ -151,6 +152,15 @@ orgs.newOrg('eclipse-uprotocol') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+          required_status_checks+: [
+            "lint", "test", "build-docs"
+          ],
+        },
+      ],
+
     },
 
     orgs.newRepo('up-kotlin') {
