@@ -130,7 +130,7 @@ orgs.newOrg('eclipse-uprotocol') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 0,
           required_status_checks+: [
-            "ci"
+            "CI status checks"
           ],
         },
       ],
