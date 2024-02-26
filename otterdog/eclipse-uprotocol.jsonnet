@@ -126,6 +126,14 @@ orgs.newOrg('eclipse-uprotocol') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_status_checks+: [
+            "ci"
+          ],
+        },
+      ],
+
     },
 
     orgs.newRepo('up-rust') {
@@ -443,5 +451,17 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+
+    orgs.newRepo('up-kalix') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "uProtocol Implementation on Kalix",
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
   ],
 }
