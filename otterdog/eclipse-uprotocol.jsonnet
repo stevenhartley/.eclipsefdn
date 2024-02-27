@@ -349,6 +349,15 @@ orgs.newOrg('eclipse-uprotocol') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+          required_status_checks+: [
+            "build"
+          ],
+        },
+      ],
+
     },
 
     orgs.newRepo('up-android-discovery') {
@@ -360,6 +369,14 @@ orgs.newOrg('eclipse-uprotocol') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+          required_status_checks+: [
+            "build"
+          ],
+        },
+      ],
     },
 
     orgs.newRepo('up-simulator-proxy') {
@@ -378,6 +395,7 @@ orgs.newOrg('eclipse-uprotocol') {
       },
     },
 
+
     orgs.newRepo('up-android-example') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -392,7 +410,17 @@ orgs.newOrg('eclipse-uprotocol') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+          required_status_checks+: [
+            "build"
+          ],
+        },
+      ],
     },
+
+
     orgs.newRepo('up-android-helloworld') {
       allow_merge_commit: true,
       allow_update_branch: false,
