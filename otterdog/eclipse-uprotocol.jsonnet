@@ -345,6 +345,12 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "Android Implementation of Core uBus and uSubscription uProtocol",
+      topics: [
+        "java",
+        "kotlin",
+        "uprotocol",
+        "android",
+      ],            
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -462,6 +468,7 @@ orgs.newOrg('eclipse-uprotocol') {
         "python",
         "up-client",
         "zenoh",
+        "uprotocol",
       ],            
       web_commit_signoff_required: false,
       workflows+: {
@@ -476,6 +483,7 @@ orgs.newOrg('eclipse-uprotocol') {
         "python",
         "up-client",
         "vsomeip",
+        "uprotocol",
       ],            
       web_commit_signoff_required: false,
       workflows+: {
@@ -502,6 +510,53 @@ orgs.newOrg('eclipse-uprotocol') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+
+
+    orgs.newRepo('up-client-mqtt5-python') {
+      allow_update_branch: false,
+      description: "Python uPClient for MQTT5 to be used by up-simulator and others",
+      topics: [
+        "python",
+        "up-client",
+        "mqtt5",
+        "uprotocol",
+      ],            
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-client-vsomeip-rust') {
+      allow_update_branch: false,
+      description: "Rust uPClient for vsomeip (SOME/IP)",
+      topics: [
+        "rust",
+        "up-client",
+        "vsomeip",
+        "uprotocol",
+      ],            
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+    orgs.newRepo('up-client-vsomeip-cpp') {
+      allow_update_branch: false,
+      description: "C++ uPClient for vsomeip (SOME/IP)",
+      topics: [
+        "cpp",
+        "up-client",
+        "vsomeip",
+        "uprotocol",
+      ],            
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
 
   ],
 }
