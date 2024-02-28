@@ -557,6 +557,21 @@ orgs.newOrg('eclipse-uprotocol') {
       },
     },
 
+   orgs.newRepo('up-zenoh-example-cpp') {
+      allow_update_branch: false,
+      description: "C++ Example application and service that utilizes up-client-zenoh-cpp",
+      topics: [
+        "cpp",
+        "example",
+        "zenoh",
+        "uprotocol",
+      ],            
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
 
   ],
 }
