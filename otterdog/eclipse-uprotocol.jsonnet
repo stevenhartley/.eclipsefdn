@@ -491,6 +491,22 @@ orgs.newOrg('eclipse-uprotocol') {
       },
     },
 
+    orgs.newRepo('up-vsomeip-helloworld') {
+      allow_update_branch: false,
+      description: "COVESA/uServices HelloWorld example for mechatronics hello world uService and client using vsomeip",
+      topics: [
+        "cpp",
+        "example",
+        "vsomeip",
+        "uprotocol",
+      ],            
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
+
+
     orgs.newRepo('up-experiments') {
       allow_update_branch: false,
       description: "Dumping ground for experiments that are WiP and there is no better home for the code",
