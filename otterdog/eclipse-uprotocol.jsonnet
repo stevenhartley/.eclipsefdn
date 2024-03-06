@@ -506,6 +506,20 @@ orgs.newOrg('eclipse-uprotocol') {
       },
     },
 
+    orgs.newRepo('up-zenoh-example-rust') {
+      allow_update_branch: false,
+      description: "Example code for zenoh using up-client-zenoh-rust",
+      topics: [
+        "rust",
+        "example",
+        "zenoh",
+        "uprotocol",
+      ],            
+      web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+    },
 
     orgs.newRepo('up-experiments') {
       allow_update_branch: false,
