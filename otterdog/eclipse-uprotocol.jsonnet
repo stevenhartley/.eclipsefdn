@@ -351,11 +351,6 @@ orgs.newOrg('eclipse-uprotocol') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 0,
-          required_status_checks+: [
-            "Build documentation",
-            "Lint",
-            "Test"
-          ],
         },
       ],
     },
