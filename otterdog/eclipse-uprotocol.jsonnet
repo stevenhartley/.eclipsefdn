@@ -378,14 +378,6 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Specifications",
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
-          required_status_checks+: [
-            "build"
-          ],
-        },
-      ],
       topics+: [
         "core",
         "uprotocol"
