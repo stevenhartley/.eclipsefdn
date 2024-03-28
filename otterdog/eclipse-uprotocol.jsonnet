@@ -3,10 +3,10 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 orgs.newOrg('eclipse-uprotocol') {
   settings+: {
     dependabot_security_updates_enabled_for_new_repositories: false,
-    description: "",
+    description: "Project to enable connecting automotive applications and services anywhere",
     name: "Eclipse uProtocol",
     readers_can_create_discussions: true,
-    two_factor_requirement: false,
+    two_factor_requirement: true,
     web_commit_signoff_required: false,
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
@@ -424,6 +424,18 @@ orgs.newOrg('eclipse-uprotocol') {
         "rust",
         "uprotocol",
         "zenoh"
+      ],
+      web_commit_signoff_required: false,
+    },
+
+    orgs.newRepo('up-client-springboot-java') {
+      allow_update_branch: false,
+      description: "Springboot implementation of uProtocol that could be used for development of cloud microservices",
+      topics+: [
+        "up-client",
+        "springboot",
+        "java",
+        "uprotocol"
       ],
       web_commit_signoff_required: false,
     },
