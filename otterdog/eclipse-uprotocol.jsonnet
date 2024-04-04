@@ -5,7 +5,6 @@ orgs.newOrg('eclipse-uprotocol') {
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "Project to enable connecting automotive applications and services anywhere",
     name: "Eclipse uProtocol",
-    readers_can_create_discussions: true,
     two_factor_requirement: true,
     web_commit_signoff_required: false,
     workflows+: {
