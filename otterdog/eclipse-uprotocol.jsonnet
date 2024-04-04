@@ -245,7 +245,8 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "uProtocol Core APIs and Data Model",
+      archived: true,
+      description: "DEPRECATED: uProtocol Core APIs and Data Model",
       topics+: [
         "core",
         "protos",
