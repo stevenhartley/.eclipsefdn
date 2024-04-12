@@ -392,6 +392,14 @@ orgs.newOrg('eclipse-uprotocol') {
         "uprotocol"
       ],
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+            "verify-pr"
+          ],
+        },
+      ],
     },
     orgs.newRepo('up-streamer-rust') {
       allow_update_branch: false,
