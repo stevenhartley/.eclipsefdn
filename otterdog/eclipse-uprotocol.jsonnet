@@ -213,6 +213,15 @@ orgs.newOrg('eclipse-uprotocol') {
         "zenoh"
       ],
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+          required_status_checks+: [
+            "CI status checks"
+          ],
+        },
+      ],
+
     },
     orgs.newRepo('up-client-zenoh-java') {
       allow_update_branch: false,
