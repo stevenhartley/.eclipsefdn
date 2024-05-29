@@ -387,6 +387,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "uProtocol Specifications",
+      has_discussions: true,
       topics+: [
         "core",
         "uprotocol"
