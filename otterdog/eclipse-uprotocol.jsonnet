@@ -5,7 +5,6 @@ orgs.newOrg('eclipse-uprotocol') {
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "Project to enable connecting automotive applications and services anywhere",
     name: "Eclipse uProtocol",
-    two_factor_requirement: true,
     web_commit_signoff_required: false,
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
@@ -38,17 +37,20 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('.github') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
     },
     orgs.newRepo('manifests') {
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       description: "Collection of repo manifests for pulling uProtocol projects",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-android-core') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "Android Implementation of Core uBus and uSubscription uProtocol",
       topics+: [
@@ -70,6 +72,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-android-discovery') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "Android Implementation of uDiscovery service",
       web_commit_signoff_required: false,
@@ -85,6 +88,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-android-example') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "Android Implementation of uDiscovery service",
       topics+: [
@@ -105,123 +109,20 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-android-helloworld') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "Implementation of COVESA/HelloWorld Application and Service for Android",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('up-transport-android-java') {
-      aliases: ["up-client-android-java"],
+    orgs.newRepo('up-conan-recipes') {
+      allow_merge_commit: true,
       allow_update_branch: false,
-      description: "Java Client Library to connect to the Android implementation of uProtocol",
+      delete_branch_on_merge: false,
+      description: "Conan recipes for uProtocol C++ libraries",
       topics+: [
-        "android",
-        "java",
-        "up-transport",
-        "uprotocol"
-      ],
-      web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
-          required_status_checks+: [
-            "build"
-          ],
-        },
-      ],
-    },
-    orgs.newRepo('up-transport-android-kotlin') {
-      aliases: ["up-client-android-kotlin"],
-      allow_update_branch: false,
-      description: "Kotlin Client Library to connect to the Android implementation of uProtocol",
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-android-rust') {
-      aliases: ["up-client-android-rust"],
-      allow_update_branch: false,
-      description: "Rust client side Library for Android implementation of uProtocol",
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-azure-java') {
-      aliases: ["up-client-azure-java"],
-      allow_update_branch: false,
-      description: "Java client side Library to build uEs that will run on Azure",
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-mqtt5-python') {
-      aliases: ["up-client-mqtt5-python"],
-      allow_update_branch: false,
-      description: "Python uPClient for MQTT5 to be used by up-simulator and others",
-      topics+: [
-        "mqtt5",
-        "python",
-        "up-transport",
-        "uprotocol"
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-mqtt5-java') {
-      aliases: ["up-client-mqtt5-java"],
-      allow_update_branch: false,
-      description: "Java uPClient for MQTT5",
-      topics+: [
-        "mqtt5",
-        "java",
-        "up-transport",
-        "uprotocol"
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-mqtt5-rust') {
-      aliases: ["up-client-mqtt5-rust"],
-      allow_update_branch: false,
-      description: "Rust client to communicate with a MQTT5 broker",
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-vsomeip-cpp') {
-      aliases: ["up-client-vsomeip-cpp"],
-      allow_update_branch: false,
-      description: "C++ uPClient for vsomeip (SOME/IP)",
-      topics+: [
+        "conan",
         "cpp",
-        "up-transport",
-        "uprotocol",
-        "vsomeip"
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-vsomeip-python') {
-      aliases: ["up-client-vsomeip-python"],
-      allow_update_branch: false,
-      description: "Python uPClient implementation for SOME/IP using vsomeip",
-      topics+: [
-        "python",
-        "up-transport",
-        "uprotocol",
-        "vsomeip"
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-vsomeip-rust') {
-      aliases: ["up-client-vsomeip-rust"],
-      allow_update_branch: false,
-      description: "Rust uPClient for vsomeip (SOME/IP)",
-      topics+: [
-        "rust",
-        "up-transport",
-        "uprotocol",
-        "vsomeip"
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-zenoh-cpp') {
-      aliases: ["up-client-zenoh-cpp"],
-      allow_update_branch: false,
-      description: "C++ client library to connect to the zenoh implementation of uProtocol",
-      topics+: [
-        "cpp",
-        "up-transport",
-        "uprotocol",
-        "zenoh"
+        "uprotocol"
       ],
       web_commit_signoff_required: false,
       branch_protection_rules: [
@@ -232,37 +133,11 @@ orgs.newOrg('eclipse-uprotocol') {
           ],
         },
       ],
-
-    },
-    orgs.newRepo('up-transport-zenoh-python') {
-      aliases: ["up-client-zenoh-python"],
-      allow_update_branch: false,
-      description: "Python uPClient implementation for the Zenoh transport",
-      topics+: [
-        "python",
-        "up-transport",
-        "uprotocol",
-        "zenoh"
-      ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-transport-zenoh-rust') {
-      aliases: ["up-client-zenoh-rust"],
-      allow_update_branch: false,
-      description: "Rust client-side library to talk to the Zenoh implementation of uProtocol",
-      topics+: [
-        "rust",
-        "up-transport",
-        "zenoh"
-      ],
-      web_commit_signoff_required: false,
     },
     orgs.newRepo('up-core-api') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
       archived: true,
-      description: "DEPRECATED: uProtocol Core APIs and Data Model",
+      code_scanning_default_setup_enabled: true,
+      description: "uProtocol Core APIs and Data Model",
       topics+: [
         "core",
         "protos",
@@ -281,6 +156,10 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-cpp') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "python"
+      ],
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for C++",
       topics+: [
@@ -300,6 +179,7 @@ orgs.newOrg('eclipse-uprotocol') {
     },
     orgs.newRepo('up-experiments') {
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       description: "Dumping ground for experiments that are WiP and there is no better home for the code",
       web_commit_signoff_required: false,
     },
@@ -333,6 +213,10 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-kotlin') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "java-kotlin"
+      ],
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for Kotlin",
       topics+: [
@@ -345,6 +229,10 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-python') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "python"
+      ],
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for Python",
       topics+: [
@@ -357,6 +245,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-rust') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for Rust",
       topics+: [
@@ -374,6 +263,13 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-simulator') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "javascript",
+        "javascript-typescript",
+        "python",
+        "typescript"
+      ],
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "Simulator implementation of uProtocol to simulate other implementations (zenoh, android, cloud, etc..)",
       web_commit_signoff_required: false,
@@ -381,6 +277,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-simulator-proxy') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "Android Implementation of uDiscovery service",
       topics+: [
@@ -393,6 +290,7 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-spec') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "uProtocol Specifications",
       has_discussions: true,
@@ -403,18 +301,178 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1
+          required_approving_review_count: 1,
         },
       ],
     },
     orgs.newRepo('up-streamer-rust') {
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
       description: "Generic uStreamer implementation written in Rust",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-tck') {
       allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "python"
+      ],
+      code_scanning_default_setup_enabled: true,
       description: "uProtocol Test Compatibility Kit",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-android-java') {
+      allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
+      description: "Java Client Library to connect to the Android implementation of uProtocol",
+      topics+: [
+        "android",
+        "java",
+        "up-transport",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+          required_status_checks+: [
+            "build"
+          ],
+        },
+      ],
+    },
+    orgs.newRepo('up-transport-android-kotlin') {
+      allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
+      description: "Kotlin Client Library to connect to the Android implementation of uProtocol",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-android-rust') {
+      allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
+      description: "Rust client side Library for Android implementation of uProtocol",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-azure-java') {
+      allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
+      description: "Java client side Library to build uEs that will run on Azure",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-mqtt5-java') {
+      allow_update_branch: false,
+      description: "Java uPClient for MQTT5",
+      topics+: [
+        "java",
+        "mqtt5",
+        "up-transport",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-mqtt5-python') {
+      allow_update_branch: false,
+      description: "Python uPClient for MQTT5 to be used by up-simulator and others",
+      topics+: [
+        "mqtt5",
+        "python",
+        "up-transport",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-mqtt5-rust') {
+      allow_update_branch: false,
+      description: "Rust client to communicate with a MQTT5 broker",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-springboot-java') {
+      allow_update_branch: false,
+      description: "Springboot implementation of uProtocol that could be used for development of cloud microservices",
+      topics+: [
+        "java",
+        "springboot",
+        "up-transport",
+        "uprotocol"
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-vsomeip-cpp') {
+      allow_update_branch: false,
+      description: "C++ uPClient for vsomeip (SOME/IP)",
+      topics+: [
+        "cpp",
+        "up-transport",
+        "uprotocol",
+        "vsomeip"
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-vsomeip-python') {
+      allow_update_branch: false,
+      description: "Python uPClient implementation for SOME/IP using vsomeip",
+      topics+: [
+        "python",
+        "up-transport",
+        "uprotocol",
+        "vsomeip"
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-vsomeip-rust') {
+      allow_update_branch: false,
+      description: "Rust uPClient for vsomeip (SOME/IP)",
+      topics+: [
+        "rust",
+        "up-transport",
+        "uprotocol",
+        "vsomeip"
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-zenoh-cpp') {
+      allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
+      description: "C++ client library to connect to the zenoh implementation of uProtocol",
+      topics+: [
+        "cpp",
+        "up-transport",
+        "uprotocol",
+        "zenoh"
+      ],
+      web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 0,
+          required_status_checks+: [
+            "CI status checks"
+          ],
+        },
+      ],
+    },
+    orgs.newRepo('up-transport-zenoh-python') {
+      allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "python"
+      ],
+      code_scanning_default_setup_enabled: true,
+      description: "Python uPClient implementation for the Zenoh transport",
+      topics+: [
+        "python",
+        "up-transport",
+        "uprotocol",
+        "zenoh"
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-transport-zenoh-rust') {
+      allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
+      description: "Rust client-side library to talk to the Zenoh implementation of uProtocol",
+      topics+: [
+        "rust",
+        "up-transport",
+        "zenoh"
+      ],
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-vsomeip-helloworld') {
@@ -449,40 +507,6 @@ orgs.newOrg('eclipse-uprotocol') {
         "zenoh"
       ],
       web_commit_signoff_required: false,
-    },
-
-    orgs.newRepo('up-transport-springboot-java') {
-      aliases: ["up-client-springboot-java"],
-      allow_update_branch: false,
-      description: "Springboot implementation of uProtocol that could be used for development of cloud microservices",
-      topics+: [
-        "up-transport",
-        "springboot",
-        "java",
-        "uprotocol"
-      ],
-      web_commit_signoff_required: false,
-    },
-
-    orgs.newRepo('up-conan-recipes') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "Conan recipes for uProtocol C++ libraries",
-      topics+: [
-        "conan",
-        "cpp",
-        "uprotocol"
-      ],
-      web_commit_signoff_required: false,
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 0,
-          required_status_checks+: [
-            "CI status checks"
-          ],
-        },
-      ],
     },
   ],
 }
