@@ -397,6 +397,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-vsomeip-cpp') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages: [
         "c-cpp"
@@ -434,6 +435,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-transport-zenoh-cpp') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages: [
         "c-cpp"
@@ -494,6 +496,7 @@ orgs.newOrg('eclipse-uprotocol') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('up-zenoh-example-cpp') {
+      allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages: [
         "c-cpp"
