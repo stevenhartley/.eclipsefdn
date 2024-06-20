@@ -194,7 +194,8 @@ orgs.newOrg('eclipse-uprotocol') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           required_status_checks+: [
-            "verify-pr"
+            "verify-pr",
+            "lint"
           ],
         },
       ],
@@ -235,6 +236,15 @@ orgs.newOrg('eclipse-uprotocol') {
         "core",
         "python",
         "uprotocol"
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+            "test-and-coverage",
+            "lint"
+          ],
+        },
       ],
       web_commit_signoff_required: false,
     },
