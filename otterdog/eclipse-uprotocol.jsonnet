@@ -156,10 +156,6 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-cpp') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      code_scanning_default_languages: [
-        "c-cpp"
-      ],
-      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for C++",
       topics+: [
@@ -399,10 +395,6 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-transport-vsomeip-cpp') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      code_scanning_default_languages: [
-        "c-cpp"
-      ],
-      code_scanning_default_setup_enabled: true,
       description: "C++ uPClient for vsomeip (SOME/IP)",
       topics+: [
         "cpp",
@@ -437,10 +429,6 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-transport-zenoh-cpp') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      code_scanning_default_languages: [
-        "c-cpp"
-      ],
-      code_scanning_default_setup_enabled: true,
       description: "C++ client library to connect to the zenoh implementation of uProtocol",
       topics+: [
         "cpp",
@@ -498,10 +486,6 @@ orgs.newOrg('eclipse-uprotocol') {
     orgs.newRepo('up-zenoh-example-cpp') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      code_scanning_default_languages: [
-        "c-cpp"
-      ],
-      code_scanning_default_setup_enabled: true,
       description: "C++ Example application and service that utilizes up-transport-zenoh-cpp",
       topics+: [
         "cpp",
