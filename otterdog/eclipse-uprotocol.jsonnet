@@ -240,7 +240,7 @@ orgs.newOrg('eclipse-uprotocol') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           required_status_checks+: [
-            "test-and-coverage",
+            "Test with coverage",
             "lint"
           ],
         },
