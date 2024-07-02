@@ -2,7 +2,6 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('eclipse-uprotocol') {
   settings+: {
-    dependabot_security_updates_enabled_for_new_repositories: false,
     description: "Project to enable connecting automotive applications and services anywhere",
     name: "Eclipse uProtocol",
     web_commit_signoff_required: false,
