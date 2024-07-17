@@ -545,5 +545,20 @@ orgs.newOrg('eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('up-transport-socket') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "Simple socket implementations of uTransport written in C++, Rust, Python, and Java to test uE-2-uE communication",
+      topics+: [
+        "cpp",
+        "python",
+        "java",
+        "rust",
+        "up-transport",
+        "uprotocol",
+        "socket"
+      ],
+      web_commit_signoff_required: false,
+    },
   ],
 }
