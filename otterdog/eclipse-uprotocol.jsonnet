@@ -199,7 +199,8 @@ orgs.newOrg('eclipse-uprotocol') {
         },
       ],
     },
-    orgs.newRepo('up-kalix') {
+    orgs.newRepo('up-akka') {
+      aliases: ["up-kalix"],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -560,5 +561,25 @@ orgs.newOrg('eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
     },
-  ],
+    orgs.newRepo('up-recorder-cpp') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "uProtocol Recorder",
+      topics+: [
+        "cpp",
+        "uprotocol",
+      ],
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('up-player-cpp') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "uProtocol Recorder",
+      topics+: [
+        "cpp",
+        "uprotocol",
+      ],
+      web_commit_signoff_required: false,
+    },
+  ]
 }
