@@ -544,16 +544,14 @@ orgs.newOrg('eclipse-uprotocol') {
         "uprotocol",
       ],
       web_commit_signoff_required: false,
-    },
-    orgs.newRepo('up-subscription-cpp') {
-      allow_update_branch: false,
-      description: "uSubscription service written in C++",
-      topics+: [
-        "usubscription",
-        "cpp",
-        "uprotocol",
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+            "Cargo"
+          ],
+        },
       ],
-      web_commit_signoff_required: false,
     },
     orgs.newRepo('up-discovery-cpp') {
       allow_update_branch: false,
