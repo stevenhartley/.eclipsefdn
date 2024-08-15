@@ -620,5 +620,11 @@ orgs.newOrg('eclipse-uprotocol') {
       description: "Main landing page/website for uProtocol",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('up-tools') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "Repository for code generators and other uProtocol tools",
+      web_commit_signoff_required: false,
+    },
   ]
 }
