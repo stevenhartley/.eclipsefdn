@@ -38,6 +38,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
+      homepage: "",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('eclipse-uprotocol.github.io') {
@@ -46,6 +47,7 @@ orgs.newOrg('eclipse-uprotocol') {
       allow_update_branch: false,
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
+      homepage: "https://eclipse-uprotocol.github.io/",
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
