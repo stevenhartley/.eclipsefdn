@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-uprotocol') {
+orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
   settings+: {
     description: "Project to enable connecting automotive applications and services anywhere",
     name: "Eclipse uProtocol",
