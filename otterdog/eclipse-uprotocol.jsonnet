@@ -649,5 +649,11 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('ci-cd') {
+      allow_merge_commit: false,
+      allow_update_branch: false,
+      description: "Shared resources for implementing CI/CD pipelines",
+      web_commit_signoff_required: false,
+    },
   ],
 }
