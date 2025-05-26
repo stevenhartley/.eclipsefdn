@@ -663,5 +663,24 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       description: "Shared resources for implementing CI/CD pipelines",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('up-transport-iceoryx2-rust') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "Rust uTransport implementation for iceoryx2",
+      web_commit_signoff_required: false,
+      topics+: [
+        "rust",
+        "uprotocol",
+        "iceoryx2"
+      ],
+      variables: [
+        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
+          value: "up-spec/basics/uattributes.adoc up-spec/up-l1/README.adoc up-spec/up-l1/mqtt_5.adoc",
+        },
+        orgs.newRepoVariable('UP_COMPONENT_OPEN_FAST_TRACE_FILE_PATTERNS') {
+          value: "*.adoc *.md *.rs .github examples src tests",
+        },
+      ],
+    },
   ],
 }
