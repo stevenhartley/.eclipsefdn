@@ -669,5 +669,16 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       ],
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('up-transport-iceoryx2-rust') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "Rust uTransport implementation for iceoryx2",
+      web_commit_signoff_required: false,
+      topics+: [
+        "rust",
+        "uprotocol",
+        "iceoryx2"
+      ]
+    }
   ],
 }
