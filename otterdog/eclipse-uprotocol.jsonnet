@@ -353,7 +353,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages+: [
-        "javascript-typescript",
         "python"
       ],
       code_scanning_default_setup_enabled: true,
