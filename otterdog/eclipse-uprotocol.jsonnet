@@ -41,6 +41,11 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       homepage: "",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('ci-cd') {
+      allow_update_branch: false,
+      description: "Shared resources for implementing CI/CD pipelines",
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('eclipse-uprotocol.github.io') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -318,6 +323,9 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
     orgs.newRepo('up-rust') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "actions"
+      ],
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "uProtocol Language Specific Library for Rust",
@@ -345,10 +353,8 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages+: [
-        "javascript",
         "javascript-typescript",
-        "python",
-        "typescript"
+        "python"
       ],
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
@@ -389,6 +395,9 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
     orgs.newRepo('up-streamer-rust') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "actions"
+      ],
       code_scanning_default_setup_enabled: true,
       description: "Generic uStreamer implementation written in Rust",
       web_commit_signoff_required: false,
@@ -493,11 +502,11 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
       description: "Rust client to communicate with a MQTT5 broker",
       web_commit_signoff_required: false,
       variables: [
-        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
-          value: "up-spec/basics/uattributes.adoc up-spec/up-l1/README.adoc up-spec/up-l1/mqtt_5.adoc",
-        },
         orgs.newRepoVariable('UP_COMPONENT_OPEN_FAST_TRACE_FILE_PATTERNS') {
           value: "*.adoc *.md *.rs .github examples src tests",
+        },
+        orgs.newRepoVariable('UP_SPEC_OPEN_FAST_TRACE_FILE_PATTERNS') {
+          value: "up-spec/basics/uattributes.adoc up-spec/up-l1/README.adoc up-spec/up-l1/mqtt_5.adoc",
         },
       ],
     },
@@ -606,6 +615,9 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
     orgs.newRepo('up-transport-zenoh-rust') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "actions"
+      ],
       code_scanning_default_setup_enabled: true,
       description: "Rust client-side library to talk to the Zenoh implementation of uProtocol",
       topics+: [
@@ -613,6 +625,7 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "up-transport",
         "zenoh"
       ],
+      web_commit_signoff_required: false,
       variables: [
         orgs.newRepoVariable('UP_COMPONENT_OPEN_FAST_TRACE_FILE_PATTERNS') {
           value: "Cargo.toml *.md .github examples src tests",
@@ -621,7 +634,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
           value: "up-spec/basics/uattributes.adoc up-spec/up-l1/README.adoc up-spec/up-l1/zenoh.adoc",
         },
       ],
-      web_commit_signoff_required: false,
     },
     orgs.newRepo('up-vsomeip-helloworld') {
       allow_update_branch: false,
@@ -655,12 +667,6 @@ orgs.newOrg('automotive.uprotocol', 'eclipse-uprotocol') {
         "uprotocol",
         "zenoh"
       ],
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('ci-cd') {
-      allow_merge_commit: false,
-      allow_update_branch: false,
-      description: "Shared resources for implementing CI/CD pipelines",
       web_commit_signoff_required: false,
     },
   ],
